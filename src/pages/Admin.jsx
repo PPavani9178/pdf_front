@@ -7,7 +7,7 @@ const Admin = () => {
   useEffect(() => {
     const fetchPdfs = async () => {
       const token = localStorage.getItem('token');
-      const response = await axios.get('http://localhost:5000/api/pdf', {
+      const response = await axios.get('http://localhost:8080/api/pdf', {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -20,7 +20,7 @@ const Admin = () => {
 
   const downloadPdf = async (id) => {
     const token = localStorage.getItem('token');
-    const response = await axios.get(`http://localhost:5000/api/pdf/download/${id}`, {
+    const response = await axios.get(`http://localhost:8080/api/pdf/download/${id}`, {
       headers: {
         'Authorization': `Bearer ${token}`
       },
